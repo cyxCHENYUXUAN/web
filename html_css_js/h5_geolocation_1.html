@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(navigator.geoLocation){
+            navigater.geoLocation.getCurrentPosition(successCallback,errorCallback);
+        }else{
+            console.log("error: geolocation not supported")
+        }
+
+        function successCallback(position){
+            var wd = position.coords.lattitude;
+            var jd = position.coords.longitude;
+            console.log("Your current position is: "+wd+" "+jd);
+            console.log("获取位置成功");
+        }
+
+        function errorCallback(error){
+            console.log("error: "+error);
+            console.log("获取位置失败");
+        }
+    </script>
+</body>
+</html>
